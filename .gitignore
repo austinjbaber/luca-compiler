@@ -1,0 +1,28 @@
+# Java build output
+*.class
+compiler/build/
+
+# Native build output
+*.exe
+*.o
+*.obj
+
+# Project-generated output
+bin/*.exe
+test_results/
+**/test_results/
+*.dot
+
+# Course and local metadata
+collaboration.json
+survey.json
+problem[0-9]*.json
+.agents/
+.codex/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

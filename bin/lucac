@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+set -eu
+
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+CLASSES="$ROOT/compiler/build/classes"
+
+if [ ! -d "$CLASSES" ]; then
+    make -C "$ROOT/compiler" build
+fi
+
+exec java -cp "$CLASSES" cli.Lucac "$@"
