@@ -1,0 +1,33 @@
+PROGRAM OTHER2;
+VAR I:INTEGER;
+VAR J:INTEGER;
+BEGIN
+	IF I > 0 THEN
+		READ I;
+	ENDIF;
+	IF J = 3 THEN
+		WRITE J;
+	ENDIF;
+	IF I <= 2 THEN 
+		WRITE I; 
+	ENDIF;
+	IF I < J THEN 
+		WRITE 'X';
+	ENDIF;
+	IF J >= I THEN
+		WRITE (3 * 4 + 2);
+	ENDIF;
+	IF I # 2 THEN
+		WRITE I + 3 * (( 4 + I));
+	ELSE
+		WRITELN;
+		READ J;
+	ENDIF;
+	IF J = I THEN
+		WHILE I < 10 DO
+			I := I - 1;
+			J := J * 2;
+		ENDDO;
+	ENDIF;
+END.
+

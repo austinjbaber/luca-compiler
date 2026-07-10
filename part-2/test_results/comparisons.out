@@ -1,0 +1,9 @@
+<block>
+   <TOKEN kind="LT" line="2"/>
+   <TOKEN kind="GT" line="2"/>
+   <TOKEN kind="NE" line="2"/>
+   <TOKEN kind="EQ" line="2"/>
+   <TOKEN kind="LE" line="2"/>
+   <TOKEN kind="GE" line="2"/>
+   <TOKEN kind="EOF" line="3"/>
+</block>

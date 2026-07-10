@@ -1,0 +1,9 @@
+<block>
+   <TOKEN kind="LPAREN" line="2"/>
+   <TOKEN kind="STAR" line="2"/>
+   <TOKEN kind="STAR" line="2"/>
+   <TOKEN kind="RPAREN" line="2"/>
+   <TOKEN kind="STAR" line="5"/>
+   <TOKEN kind="RPAREN" line="5"/>
+   <TOKEN kind="EOF" line="6"/>
+</block>

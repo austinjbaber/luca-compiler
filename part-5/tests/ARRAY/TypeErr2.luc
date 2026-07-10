@@ -1,0 +1,7 @@
+PROGRAM T46;
+TYPE A = ARRAY 20 OF CHAR;
+VAR C:A;
+BEGIN
+	C[4] := 3;
+END.
+

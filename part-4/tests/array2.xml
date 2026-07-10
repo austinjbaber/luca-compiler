@@ -1,0 +1,14 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="2">
+      <ARRAYDECL ident="x" elementTypeName="T" pos="2">
+         <BINARY op="PLUS" pos="2">
+            <INTLIT literal="1" pos="2"/>
+            <INTLIT literal="3" pos="2"/>
+         </BINARY>
+      </ARRAYDECL>
+      <DECLNULL pos="3"/>
+   </DECLS>
+   <STATNULL pos="4"/>
+</PROGRAM>
+</block>

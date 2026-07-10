@@ -1,0 +1,9 @@
+BEGIN
+IF 3 < 2 GOTO 10;
+PRINT 44;
+GOTO 20;
+10:;
+PRINT 99;
+20:;
+END
+

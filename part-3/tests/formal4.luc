@@ -1,0 +1,6 @@
+PROGRAM P;
+   PROCEDURE x(VAR y:z; VAR v:w);
+   BEGIN
+   END;
+BEGIN
+END.

@@ -1,0 +1,9 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="2">
+      <VARDECL ident="x" type="y" pos="2"/>
+      <DECLNULL pos="3"/>
+   </DECLS>
+   <STATNULL pos="4"/>
+</PROGRAM>
+</block>

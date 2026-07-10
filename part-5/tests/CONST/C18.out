@@ -1,0 +1,2 @@
+<SEMANTIC_ERROR pos="4" message="Can't assign to a constant or expression."/>
+<SEMANTIC_ERROR pos="5" message="Can't read to a constant."/>

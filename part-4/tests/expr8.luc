@@ -1,0 +1,4 @@
+PROGRAM P;
+BEGIN
+   WRITE a+b+c*d+e AND f*g OR h+ k<l;
+END.

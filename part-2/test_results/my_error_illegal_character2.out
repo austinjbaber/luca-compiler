@@ -1,0 +1,4 @@
+<block>
+   <TOKEN kind="ERROR_ILLEGAL_CHARACTER" line="1"/>
+   <TOKEN kind="EOF" line="3"/>
+</block>

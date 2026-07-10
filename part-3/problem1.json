@@ -1,0 +1,9 @@
+{
+  "assignment": "3",
+  "problem1": {
+    "E": ["E+T", "T"],
+    "T": ["T*P", "P"],
+    "P": ["F^P", "F"],
+    "F": ["(E)", "number"]
+  }
+}

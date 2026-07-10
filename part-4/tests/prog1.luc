@@ -1,0 +1,14 @@
+PROGRAM P;
+   PROCEDURE x();
+      PROCEDURE y();
+      BEGIN
+      END;
+      TYPE T = RECORD[];
+      VAR x : T;
+      CONST a : T = 15;
+   BEGIN
+      x();
+   END;
+BEGIN
+   x();
+END.

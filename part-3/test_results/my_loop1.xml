@@ -1,0 +1,34 @@
+<PROGRAM token="PROGRAM" line="1">
+   <MATCH token="PROGRAM" line="1"/>
+   <MATCH token="IDENT" line="1"/>
+   <MATCH token="SEMICOLON" line="1"/>
+   <decls token="BEGIN" line="2">
+   </decls>
+   <block token="BEGIN" line="2">
+      <MATCH token="BEGIN" line="2"/>
+      <statseq token="LOOP" line="3">
+         <statement token="LOOP" line="3">
+            <loop token="LOOP" line="3">
+               <MATCH token="LOOP" line="3"/>
+               <statseq token="WRITELN" line="4">
+                  <statement token="WRITELN" line="4">
+                     <writeln token="WRITELN" line="4">
+                        <MATCH token="WRITELN" line="4"/>
+                     </writeln>
+                  </statement>
+                  <MATCH token="SEMICOLON" line="4"/>
+                  <statseq token="ENDLOOP" line="5">
+                  </statseq>
+               </statseq>
+               <MATCH token="ENDLOOP" line="5"/>
+            </loop>
+         </statement>
+         <MATCH token="SEMICOLON" line="5"/>
+         <statseq token="END" line="6">
+         </statseq>
+      </statseq>
+      <MATCH token="END" line="6"/>
+   </block>
+   <MATCH token="PERIOD" line="6"/>
+   <MATCH token="EOF" line="7"/>
+</PROGRAM>

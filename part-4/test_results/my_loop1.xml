@@ -1,0 +1,14 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="5">
+      <LOOP pos="3">
+         <STATS pos="4">
+            <WRITELN pos="4"/>
+            <STATNULL pos="5"/>
+         </STATS>
+      </LOOP>
+      <STATNULL pos="6"/>
+   </STATS>
+</PROGRAM>
+</block>

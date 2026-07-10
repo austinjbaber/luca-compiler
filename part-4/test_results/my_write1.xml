@@ -1,0 +1,13 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <WRITE pos="3">
+         <VARREF ident="x" pos="3">
+            <DESNULL pos="3"/>
+         </VARREF>
+      </WRITE>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

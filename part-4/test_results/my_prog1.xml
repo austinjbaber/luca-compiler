@@ -1,0 +1,49 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="11">
+      <PROCDECL ident="x" pos="2">
+         <DECLNULL pos="2"/>
+         <DECLS pos="5">
+            <PROCDECL ident="y" pos="3">
+               <DECLNULL pos="3"/>
+               <DECLNULL pos="4"/>
+               <STATNULL pos="5"/>
+            </PROCDECL>
+            <DECLS pos="6">
+               <RECORDDECL ident="T" pos="6">
+                  <DECLNULL pos="6"/>
+               </RECORDDECL>
+               <DECLS pos="7">
+                  <VARDECL ident="x" type="T" pos="7"/>
+                  <DECLS pos="8">
+                     <CONSTDECL ident="a" type="T" pos="8">
+                        <INTLIT literal="15" pos="8"/>
+                     </CONSTDECL>
+                     <DECLNULL pos="9"/>
+                  </DECLS>
+               </DECLS>
+            </DECLS>
+         </DECLS>
+         <STATS pos="10">
+            <PROCCALL pos="10">
+               <VARREF ident="x" pos="10">
+                  <DESNULL pos="10"/>
+               </VARREF>
+               <ACTUALNULL pos="10"/>
+            </PROCCALL>
+            <STATNULL pos="11"/>
+         </STATS>
+      </PROCDECL>
+      <DECLNULL pos="12"/>
+   </DECLS>
+   <STATS pos="13">
+      <PROCCALL pos="13">
+         <VARREF ident="x" pos="13">
+            <DESNULL pos="13"/>
+         </VARREF>
+         <ACTUALNULL pos="13"/>
+      </PROCCALL>
+      <STATNULL pos="14"/>
+   </STATS>
+</PROGRAM>
+</block>

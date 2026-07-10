@@ -1,0 +1,50 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <PROCCALL pos="3">
+         <VARREF ident="a" pos="3">
+            <DESNULL pos="3"/>
+         </VARREF>
+         <ACTUAL pos="3">
+            <BINARY op="STAR" pos="3">
+               <VARREF ident="a" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+               <VARREF ident="b" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+            </BINARY>
+            <ACTUAL pos="3">
+               <BINARY op="STAR" pos="3">
+                  <VARREF ident="c" pos="3">
+                     <INDEX pos="3">
+                        <INTLIT literal="3" pos="3"/>
+                        <DESNULL pos="3"/>
+                     </INDEX>
+                  </VARREF>
+                  <VARREF ident="d" pos="3">
+                     <FIELDREF ident="e" pos="3">
+                        <DESNULL pos="3"/>
+                     </FIELDREF>
+                  </VARREF>
+               </BINARY>
+               <ACTUAL pos="3">
+                  <BINARY op="PLUS" pos="3">
+                     <BINARY op="STAR" pos="3">
+                        <INTLIT literal="3" pos="3"/>
+                        <INTLIT literal="7" pos="3"/>
+                     </BINARY>
+                     <VARREF ident="f" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                  </BINARY>
+                  <ACTUALNULL pos="3"/>
+               </ACTUAL>
+            </ACTUAL>
+         </ACTUAL>
+      </PROCCALL>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

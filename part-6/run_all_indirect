@@ -1,0 +1,71 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+VM_ROOT="${ROOT_DIR}/vm_files"
+EXPECTED_ROOT="${ROOT_DIR}/out_files"
+OUTPUT_ROOT="${ROOT_DIR}/test_results/indirect"
+RUNNER_SCRIPT="${SCRIPT_DIR}/luca_run_indirect"
+
+mkdir -p "${OUTPUT_ROOT}"
+
+mapfile -t TESTS < <(find "${VM_ROOT}" -type f -name '*.vm' | sort)
+
+total=${#TESTS[@]}
+passed=0
+failed=0
+failed_tests=()
+
+for VM_FILE in "${TESTS[@]}"; do
+    RELATIVE="${VM_FILE#${VM_ROOT}/}"
+    EXPECTED_FILE="${EXPECTED_ROOT}/${RELATIVE%.vm}.out"
+    INPUT_FILE="${EXPECTED_ROOT}/${RELATIVE%.vm}.in"
+    OUTPUT_FILE="${OUTPUT_ROOT}/${RELATIVE%.vm}.out"
+
+    echo ""
+    echo "================================================================"
+    echo "Running ${RELATIVE}"
+    mkdir -p "$(dirname "${OUTPUT_FILE}")"
+
+    # normalize line endings
+    if [[ -f "${INPUT_FILE}" ]]; then
+        if ! bash "${RUNNER_SCRIPT}" "${VM_FILE}" < "${INPUT_FILE}" | tr -d '\r' > "${OUTPUT_FILE}"; then
+            echo "FAIL"
+            failed=$((failed + 1))
+            failed_tests+=("${RELATIVE}")
+            continue
+        fi
+    else
+        if ! bash "${RUNNER_SCRIPT}" "${VM_FILE}" | tr -d '\r' > "${OUTPUT_FILE}"; then
+            echo "FAIL"
+            failed=$((failed + 1))
+            failed_tests+=("${RELATIVE}")
+            continue
+        fi
+    fi
+
+    if diff -u "${EXPECTED_FILE}" "${OUTPUT_FILE}" > /dev/null; then
+        echo "PASS"
+        passed=$((passed + 1))
+    else
+        echo "FAIL ${RELATIVE}"
+        diff -u "${EXPECTED_FILE}" "${OUTPUT_FILE}" || true
+        failed=$((failed + 1))
+        failed_tests+=("${RELATIVE}")
+    fi
+done
+
+echo ""
+echo "============ indirect ============="
+echo "Total: ${total}"
+echo "Passed: ${passed}"
+echo "Failed: ${failed}"
+
+if [[ ${#failed_tests[@]} -gt 0 ]]; then
+    echo ""
+    echo "Failed:"
+    for name in "${failed_tests[@]}"; do
+        echo "${name}"
+    done
+fi

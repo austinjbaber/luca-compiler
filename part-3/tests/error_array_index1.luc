@@ -1,0 +1,4 @@
+PROGRAM P;
+BEGIN
+   READ a[3,4];
+END.

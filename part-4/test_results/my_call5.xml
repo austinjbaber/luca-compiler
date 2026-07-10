@@ -1,0 +1,26 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <PROCCALL pos="3">
+         <VARREF ident="x" pos="3">
+            <DESNULL pos="3"/>
+         </VARREF>
+         <ACTUAL pos="3">
+            <INTLIT literal="1" pos="3"/>
+            <ACTUAL pos="3">
+               <REALLIT literal="2.2" pos="3"/>
+               <ACTUAL pos="3">
+                  <STRINGLIT literal="3" pos="3"/>
+                  <ACTUAL pos="3">
+                     <CHARLIT literal="4" pos="3"/>
+                     <ACTUALNULL pos="3"/>
+                  </ACTUAL>
+               </ACTUAL>
+            </ACTUAL>
+         </ACTUAL>
+      </PROCCALL>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

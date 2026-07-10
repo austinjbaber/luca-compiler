@@ -1,0 +1,58 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <WRITE pos="3">
+         <BINARY op="PLUS" pos="3">
+            <BINARY op="PLUS" pos="3">
+               <BINARY op="PLUS" pos="3">
+                  <BINARY op="PLUS" pos="3">
+                     <VARREF ident="a" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                     <VARREF ident="b" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                  </BINARY>
+                  <BINARY op="STAR" pos="3">
+                     <VARREF ident="c" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                     <VARREF ident="d" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                  </BINARY>
+               </BINARY>
+               <BINARY op="STAR" pos="3">
+                  <BINARY op="AND" pos="3">
+                     <VARREF ident="e" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                     <VARREF ident="f" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                  </BINARY>
+                  <BINARY op="OR" pos="3">
+                     <VARREF ident="g" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                     <VARREF ident="h" pos="3">
+                        <DESNULL pos="3"/>
+                     </VARREF>
+                  </BINARY>
+               </BINARY>
+            </BINARY>
+            <BINARY op="LT" pos="3">
+               <VARREF ident="k" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+               <VARREF ident="l" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+            </BINARY>
+         </BINARY>
+      </WRITE>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

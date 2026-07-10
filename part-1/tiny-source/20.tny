@@ -1,0 +1,7 @@
+BEGIN
+i = 0;
+10:;
+PRINT i;
+i = i + 1;
+IF i < 5 GOTO 10;
+END

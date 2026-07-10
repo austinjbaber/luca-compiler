@@ -1,0 +1,19 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="4">
+      <PROCDECL ident="x" pos="2">
+         <DECLS pos="2">
+            <FORMALDECL ident="y" type="z" mode="VAR" pos="2"/>
+            <DECLS pos="2">
+               <FORMALDECL ident="v" type="w" mode="VAR" pos="2"/>
+               <DECLNULL pos="2"/>
+            </DECLS>
+         </DECLS>
+         <DECLNULL pos="3"/>
+         <STATNULL pos="4"/>
+      </PROCDECL>
+      <DECLNULL pos="5"/>
+   </DECLS>
+   <STATNULL pos="6"/>
+</PROGRAM>
+</block>

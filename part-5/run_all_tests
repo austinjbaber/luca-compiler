@@ -1,0 +1,74 @@
+#!/bin/bash
+
+TEST_ROOT="tests"
+OUTPUT_ROOT="test_results/all"
+
+mkdir -p "${OUTPUT_ROOT}"
+
+mapfile -t TESTS < <(find "${TEST_ROOT}" -type f -name '*.luc' | sort)
+
+if [ ${#TESTS[@]} -eq 0 ]; then
+    echo "No .luc tests found under ${TEST_ROOT}" >&2
+    exit 1
+fi
+
+total=${#TESTS[@]}
+passed=0
+failed=0
+skipped=0
+failed_tests=()
+
+for INPUT_FILE in "${TESTS[@]}"; do
+    RELATIVE="${INPUT_FILE#${TEST_ROOT}/}"
+    EXPECTED_FILE="${INPUT_FILE%.luc}.out"
+
+    echo ""
+    echo "================================================================"
+    echo "Running ${RELATIVE}"
+
+    if [ ! -f "${EXPECTED_FILE}" ]; then
+        echo "SKIP Missing expected output: ${EXPECTED_FILE}"
+        skipped=$((skipped + 1))
+        continue
+    fi
+
+    OUTPUT_FILE="${OUTPUT_ROOT}/${RELATIVE%.luc}.out"
+    mkdir -p "$(dirname "${OUTPUT_FILE}")"
+
+
+# normalize line endings
+#     python - "$OUTPUT_FILE" <<'PY'
+# import pathlib, sys
+# path = pathlib.Path(sys.argv[1])
+# data = path.read_bytes().replace(b'\r\n', b'\n')
+# path.write_bytes(data)
+# PY
+
+    if diff -u "${EXPECTED_FILE}" "${OUTPUT_FILE}"; then
+        echo "PASS"
+        passed=$((passed + 1))
+    else
+        echo "FAIL ${RELATIVE}"
+        failed=$((failed + 1))
+        failed_tests+=("${RELATIVE}")
+    fi
+done
+
+echo ""
+echo "=============================="
+echo "Total: ${total}"
+echo "Passed: ${passed}"
+echo "Failed: ${failed}"
+echo "Skipped: ${skipped}"
+
+if [ ${#failed_tests[@]} -gt 0 ]; then
+    echo ""
+    echo "Failed:"
+    for name in "${failed_tests[@]}"; do
+        echo "${name}"
+    done
+fi
+
+if [ "${failed}" -gt 0 ]; then
+    exit 1
+fi

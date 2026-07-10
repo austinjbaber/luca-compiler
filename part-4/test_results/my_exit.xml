@@ -1,0 +1,9 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <EXIT pos="3"/>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

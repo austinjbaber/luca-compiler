@@ -1,0 +1,6 @@
+PROGRAM T17;
+VAR I:INTEGER;
+BEGIN
+I := 3*(5+4)*'x';
+END.
+

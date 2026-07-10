@@ -1,0 +1,5 @@
+BEGIN
+   x = 5 + y;
+   y = y + 5 + 9;
+   PRINT y;
+END

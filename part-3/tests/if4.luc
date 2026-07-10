@@ -1,0 +1,5 @@
+PROGRAM P;
+BEGIN
+   IF x THEN
+   ENDIF;
+END.

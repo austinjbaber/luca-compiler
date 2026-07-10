@@ -1,0 +1,33 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="9">
+      <WHILE pos="3">
+         <VARREF ident="x" pos="3">
+            <DESNULL pos="3"/>
+         </VARREF>
+         <STATS pos="8">
+            <REPEAT pos="4">
+               <VARREF ident="z" pos="8">
+                  <DESNULL pos="8"/>
+               </VARREF>
+               <STATS pos="7">
+                  <IF1 pos="5">
+                     <VARREF ident="y" pos="5">
+                        <DESNULL pos="5"/>
+                     </VARREF>
+                     <STATS pos="6">
+                        <WRITELN pos="6"/>
+                        <STATNULL pos="7"/>
+                     </STATS>
+                  </IF1>
+                  <STATNULL pos="8"/>
+               </STATS>
+            </REPEAT>
+            <STATNULL pos="9"/>
+         </STATS>
+      </WHILE>
+      <STATNULL pos="10"/>
+   </STATS>
+</PROGRAM>
+</block>

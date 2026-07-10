@@ -1,0 +1,5 @@
+PROGRAM T14;
+BEGIN
+C:= 3;
+END.
+

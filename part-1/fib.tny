@@ -1,0 +1,20 @@
+BEGIN
+   n = 11;
+   a = 0;
+   b = 1;
+   i = 1;
+
+   1:;
+   IF i < n GOTO 2;
+   GOTO 99;
+
+   2:;
+   c = a + b;
+   a = b;
+   b = c;
+   i = i + 1;
+   GOTO 1;
+
+   99:;
+   PRINT a;
+END

@@ -1,0 +1,4 @@
+BEGIN
+   PRINT 5 < 10; 
+   PRINT 10 < 5; 
+END

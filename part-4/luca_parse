@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; then
+    echo "Usage: ./luca_parse <input.luc> <output.xml> <output.gv>"
+    exit 1
+fi
+
+java -cp parser.Parse "$1" "$2" "$3"

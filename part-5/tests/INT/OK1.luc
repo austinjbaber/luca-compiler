@@ -1,0 +1,12 @@
+PROGRAM T1OK;
+VAR I:INTEGER;
+VAR J:INTEGER;
+VAR C:CHAR;
+BEGIN
+	I:=1;
+	J:=5*I+6;
+	I:=J;
+	I:=(3*5)+4*(I/3*(J*4));
+	C:='X';
+END.
+

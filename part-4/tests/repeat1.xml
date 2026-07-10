@@ -1,0 +1,24 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="5">
+      <REPEAT pos="3">
+         <VARREF ident="z" pos="5">
+            <DESNULL pos="5"/>
+         </VARREF>
+         <STATS pos="4">
+            <ASSIGN pos="4">
+               <VARREF ident="x" pos="4">
+                  <DESNULL pos="4"/>
+               </VARREF>
+               <VARREF ident="y" pos="4">
+                  <DESNULL pos="4"/>
+               </VARREF>
+            </ASSIGN>
+            <STATNULL pos="5"/>
+         </STATS>
+      </REPEAT>
+      <STATNULL pos="6"/>
+   </STATS>
+</PROGRAM>
+</block>

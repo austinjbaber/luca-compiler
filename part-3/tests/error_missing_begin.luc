@@ -1,0 +1,6 @@
+PROGRAM P;
+   PROCEDURE x();
+   IF x THEN WRITELN;
+   END;
+BEGIN
+END.

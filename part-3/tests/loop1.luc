@@ -1,0 +1,6 @@
+PROGRAM P;
+BEGIN
+   LOOP
+      WRITELN;
+   ENDLOOP;
+END.

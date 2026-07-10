@@ -1,0 +1,22 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <WRITE pos="3">
+         <BINARY op="AND" pos="3">
+            <UNARY op="NOT" pos="3">
+               <VARREF ident="a" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+            </UNARY>
+            <UNARY op="MINUS" pos="3">
+               <VARREF ident="b" pos="3">
+                  <DESNULL pos="3"/>
+               </VARREF>
+            </UNARY>
+         </BINARY>
+      </WRITE>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

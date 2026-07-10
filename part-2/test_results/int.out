@@ -1,0 +1,7 @@
+<block>
+   <TOKEN kind="INTLIT" line="1" value="1"/>
+   <TOKEN kind="INTLIT" line="2" value="12"/>
+   <TOKEN kind="INTLIT" line="3" value="123"/>
+   <TOKEN kind="INTLIT" line="4" value="1234"/>
+   <TOKEN kind="EOF" line="5"/>
+</block>

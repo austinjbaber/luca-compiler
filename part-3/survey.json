@@ -1,0 +1,23 @@
+{
+  "instructions": "It is totally optional to fill out this survey. Your feedback will help me improve the course.",
+
+  "assignment": "3",
+
+  "number of hours spent on this assignment" :
+           0,
+
+  "how difficult I found this assignment to be [1=trivial,    5=impossible]": 
+           0,
+
+  "amount I learnt from this assignment        [1=nothing,    5=a lot]":      
+           0,
+
+  "I enjoyed this assignment                   [1=not at all, 5=a lot]":      
+           0,
+
+  "I experienced the following problems": 
+           "",
+
+  "here is how I think you can improve the assignment for next year": 
+           ""
+}

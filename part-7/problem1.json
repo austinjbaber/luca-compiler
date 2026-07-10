@@ -1,0 +1,19 @@
+{
+  "assignment": "7",
+  "problem_1": {
+    "PUSH_ACTIVATION_RECORD":  ["m=2","n=0","ReturnAddr=[12]","a=...","b=...","ReturnVal=..."],
+    "PUSH_ACTIVATION_RECORD":  ["m=1","n=1","ReturnAddr=[3]","a=...","b=...","ReturnVal=..."],
+    "PUSH_ACTIVATION_RECORD":  ["m=1","n=0","ReturnAddr=[6]","a=...","b=...","ReturnVal=..."],
+    "PUSH_ACTIVATION_RECORD":  ["m=0","n=1","ReturnAddr=[3]","a=...","b=...","ReturnVal=..."],
+    "POP_ACTIVATION_RECORD":   ["ReturnAddr=[3]","ReturnVal=2"],
+    "_comment:" : "at [3], ackermann(1,0) returns 2",
+    "POP_ACTIVATION_RECORD":   ["ReturnAddr=[6]","ReturnVal=2"],
+    "_comment:" : "at [6], set a=2 then call ackermann(0,2)",
+    "PUSH_ACTIVATION_RECORD":  ["m=0","n=2","ReturnAddr=[7]","a=...","b=...","ReturnVal=..."],
+    "POP_ACTIVATION_RECORD":   ["ReturnAddr=[7]","ReturnVal=3"],
+    "_comment:" : "at [7], set b=3 then return 3",
+    "POP_ACTIVATION_RECORD":   ["ReturnAddr=[3]","ReturnVal=3"],
+    "_comment:" : "at [3], ackermann(2,0) returns 3",
+    "POP_ACTIVATION_RECORD":   ["ReturnAddr=[12]","ReturnVal=3"]
+  }
+}

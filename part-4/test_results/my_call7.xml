@@ -1,0 +1,21 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <PROCCALL pos="3">
+         <VARREF ident="a" pos="3">
+            <FIELDREF ident="b" pos="3">
+               <FIELDREF ident="c" pos="3">
+                  <INDEX pos="3">
+                     <INTLIT literal="3" pos="3"/>
+                     <DESNULL pos="3"/>
+                  </INDEX>
+               </FIELDREF>
+            </FIELDREF>
+         </VARREF>
+         <ACTUALNULL pos="3"/>
+      </PROCCALL>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

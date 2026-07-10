@@ -1,0 +1,6 @@
+BEGIN
+   x = 5;
+   y = 99;
+   z = y + x + 9;
+   PRINT z;
+END

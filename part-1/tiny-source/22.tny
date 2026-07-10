@@ -1,0 +1,10 @@
+BEGIN
+x = 1;
+IF x GOTO 10;
+PRINT 111;
+GOTO 20;
+10:;
+PRINT 222;
+20:;
+END
+

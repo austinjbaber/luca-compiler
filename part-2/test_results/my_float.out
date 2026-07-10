@@ -1,0 +1,13 @@
+<block>
+   <TOKEN kind="REALLIT" line="1" value=".12"/>
+   <TOKEN kind="REALLIT" line="2" value="34."/>
+   <TOKEN kind="REALLIT" line="3" value="45.67"/>
+   <TOKEN kind="REALLIT" line="4" value="8.E5"/>
+   <TOKEN kind="REALLIT" line="5" value=".9E5"/>
+   <TOKEN kind="REALLIT" line="6" value="1.2E5"/>
+   <TOKEN kind="REALLIT" line="7" value="1.2e5"/>
+   <TOKEN kind="REALLIT" line="8" value="1.2e-5"/>
+   <TOKEN kind="REALLIT" line="9" value="1.2E+5"/>
+   <TOKEN kind="REALLIT" line="10" value="1.2E+99"/>
+   <TOKEN kind="EOF" line="11"/>
+</block>

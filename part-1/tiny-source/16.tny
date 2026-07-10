@@ -1,0 +1,5 @@
+BEGIN
+    22:;
+    GOTO 22;
+    IF 1 < 2 GOTO 22;
+END

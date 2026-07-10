@@ -1,0 +1,23 @@
+digraph AST {
+   node0[label="PROGRAM
+position=1
+ident=P"; style="filled";shape="box";color="black";fillcolor="#7293CB";   ];
+   node1[label="DECLS
+position=2
+ident=null"; style="filled";shape="box";color="black";fillcolor="#7293CB";   ];
+   node2[label="ARRAYDECL
+position=2
+ident=x
+elementTypeName=T"; style="filled";shape="box";color="black";fillcolor="#7293CB";   ];
+   node3[label="VARREF
+position=2
+ident=a"; style="filled";shape="box";color="black";fillcolor="#84BA51";   ];
+   node4[label="DECLNULL
+position=3"; style="filled";shape="box";color="black";fillcolor="#7293CB";   ];
+   node5[label="STATNULL
+position=4"; style="filled";shape="box";color="black";fillcolor="#E1974C";   ];
+   node2 -> node3 []
+   node1 -> node2 []
+   node1 -> node4 []
+   node0 -> node1 []
+   node0 -> node5 []}

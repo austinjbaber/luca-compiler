@@ -1,0 +1,9 @@
+PROGRAM T28;
+   PROCEDURE P();
+   VAR J:INTEGER;
+   BEGIN
+   END;
+BEGIN
+   J:=3;
+END.
+

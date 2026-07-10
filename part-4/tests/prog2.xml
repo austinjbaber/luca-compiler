@@ -1,0 +1,68 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="12">
+      <PROCDECL ident="x" pos="2">
+         <DECLNULL pos="2"/>
+         <DECLS pos="9">
+            <PROCDECL ident="y" pos="3">
+               <DECLNULL pos="3"/>
+               <DECLS pos="4">
+                  <RECORDDECL ident="T" pos="4">
+                     <DECLNULL pos="4"/>
+                  </RECORDDECL>
+                  <DECLS pos="5">
+                     <VARDECL ident="x" type="T" pos="5"/>
+                     <DECLS pos="6">
+                        <CONSTDECL ident="a" type="T" pos="6">
+                           <INTLIT literal="15" pos="6"/>
+                        </CONSTDECL>
+                        <DECLNULL pos="7"/>
+                     </DECLS>
+                  </DECLS>
+               </DECLS>
+               <STATS pos="8">
+                  <IF2 pos="8">
+                     <VARREF ident="x" pos="8">
+                        <DESNULL pos="8"/>
+                     </VARREF>
+                     <STATS pos="8">
+                        <WRITELN pos="8"/>
+                        <STATNULL pos="8"/>
+                     </STATS>
+                     <STATS pos="8">
+                        <WRITE pos="8">
+                           <VARREF ident="a" pos="8">
+                              <DESNULL pos="8"/>
+                           </VARREF>
+                        </WRITE>
+                        <STATNULL pos="8"/>
+                     </STATS>
+                  </IF2>
+                  <STATNULL pos="9"/>
+               </STATS>
+            </PROCDECL>
+            <DECLNULL pos="10"/>
+         </DECLS>
+         <STATS pos="11">
+            <PROCCALL pos="11">
+               <VARREF ident="x" pos="11">
+                  <DESNULL pos="11"/>
+               </VARREF>
+               <ACTUALNULL pos="11"/>
+            </PROCCALL>
+            <STATNULL pos="12"/>
+         </STATS>
+      </PROCDECL>
+      <DECLNULL pos="13"/>
+   </DECLS>
+   <STATS pos="14">
+      <PROCCALL pos="14">
+         <VARREF ident="x" pos="14">
+            <DESNULL pos="14"/>
+         </VARREF>
+         <ACTUALNULL pos="14"/>
+      </PROCCALL>
+      <STATNULL pos="15"/>
+   </STATS>
+</PROGRAM>
+</block>

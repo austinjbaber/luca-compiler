@@ -1,0 +1,4 @@
+<block>
+   <TOKEN kind="ERROR_UNTERMINATED_CHAR" line="1"/>
+   <TOKEN kind="EOF" line="2"/>
+</block>

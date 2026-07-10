@@ -1,0 +1,20 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <WRITE pos="3">
+         <BINARY op="PLUS" pos="3">
+            <BINARY op="PLUS" pos="3">
+               <BINARY op="PLUS" pos="3">
+                  <INTLIT literal="1" pos="3"/>
+                  <REALLIT literal="1.1" pos="3"/>
+               </BINARY>
+               <STRINGLIT literal="1" pos="3"/>
+            </BINARY>
+            <CHARLIT literal="1" pos="3"/>
+         </BINARY>
+      </WRITE>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

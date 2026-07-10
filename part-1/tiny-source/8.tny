@@ -1,0 +1,4 @@
+BEGIN
+   45:;
+   PRINT 5;
+END

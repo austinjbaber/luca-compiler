@@ -1,0 +1,33 @@
+/* Compile with 'dot -Tpng graph.gv > graph.png' */
+
+digraph problem5 { 
+   call1 [label="ackermann(2,1)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call2 [label="ackermann(2,0)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call3 [label="ackermann(1,3)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call4 [label="ackermann(1,1)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call5 [label="ackermann(1,2)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call6 [label="ackermann(0,4)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call7 [label="ackermann(1,0)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call8 [label="ackermann(0,2)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call9 [label="ackermann(1,1)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call10 [label="ackermann(0,3)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call11 [label="ackermann(0,1)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call12 [label="ackermann(1,0)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call13 [label="ackermann(0,2)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+   call14 [label="ackermann(0,1)"; style="filled"; shape="circle"; color="black"; fillcolor="#FFFFFF";];
+
+   call1 -> call2 [label="a="];
+   call1 -> call3 [label="b="];
+   call2 -> call4 [label="return"];
+   call3 -> call5 [label="a="];
+   call3 -> call6 [label="b="];
+   call4 -> call7 [label="a="];
+   call4 -> call8 [label="b="];
+   call5 -> call9 [label="a="];
+   call5 -> call10 [label="b="];
+   call7 -> call11 [label="return"];
+   call9 -> call12 [label="a="];
+   call9 -> call13 [label="b="];
+   call12 -> call14 [label="return"];
+} 
+ 

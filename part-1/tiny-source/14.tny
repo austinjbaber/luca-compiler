@@ -1,0 +1,8 @@
+BEGIN
+   x = 10;
+   y = 20;
+   IF x < y GOTO 45;
+   PRINT 99;
+   45:;
+   PRINT 33;
+END

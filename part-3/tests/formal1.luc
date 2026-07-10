@@ -1,0 +1,6 @@
+PROGRAM P;
+   PROCEDURE x(y : z);
+   BEGIN
+   END;
+BEGIN
+END.

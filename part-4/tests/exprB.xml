@@ -1,0 +1,17 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <WRITE pos="3">
+         <UNARY op="TRUNC" pos="3">
+            <UNARY op="FLOAT" pos="3">
+               <UNARY op="MINUS" pos="3">
+                  <INTLIT literal="42" pos="3"/>
+               </UNARY>
+            </UNARY>
+         </UNARY>
+      </WRITE>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

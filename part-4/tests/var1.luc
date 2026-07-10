@@ -1,0 +1,4 @@
+PROGRAM P;
+VAR x : y;
+BEGIN
+END.

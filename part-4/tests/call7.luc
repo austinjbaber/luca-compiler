@@ -1,0 +1,4 @@
+PROGRAM P;
+BEGIN
+   a.b.c[3]();
+END.

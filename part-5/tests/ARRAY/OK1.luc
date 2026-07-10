@@ -1,0 +1,24 @@
+PROGRAM T4OK;
+TYPE A = ARRAY 20 OF INTEGER;
+TYPE B = ARRAY 20 OF A;
+TYPE C = ARRAY 20 OF B;
+TYPE R = RECORD [a:CHAR;b:C];
+TYPE S = ARRAY 20 OF R;
+VAR D:C;
+VAR E:B;
+VAR F:A;
+VAR G:R;
+VAR H:S;
+BEGIN
+	D[1][3][5]:= TRUNC 7.8;
+	E[1][2]:= (3+(4*F[1]));
+	READ F[1];
+	READ E[4][5];
+	E[4][8] := 23;
+	WRITE D[2][5][6];
+	WRITE F[5];
+   
+        WRITE G.b[2][5][6];   
+        WRITE H[5].b[2][5][6];   
+END.
+

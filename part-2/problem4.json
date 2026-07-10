@@ -1,0 +1,11 @@
+{
+  "assignment": "2",
+  "problem_4": {
+    "epsilon-closure(0)": [0],
+    "epsilon-closure(1)": [1, 2, 3],
+    "epsilon-closure(2)": [2],
+    "epsilon-closure(3)": [3],
+    "epsilon-closure(4)": [4, 2],
+    "epsilon-closure(5)": [5]
+  }
+}

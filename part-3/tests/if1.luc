@@ -1,0 +1,6 @@
+PROGRAM P;
+BEGIN
+   IF x THEN
+      WRITELN;
+   ENDIF;
+END.

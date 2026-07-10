@@ -1,0 +1,6 @@
+BEGIN
+   IF 1 GOTO 45;
+   PRINT 99;
+   45:;
+   PRINT 33;
+END

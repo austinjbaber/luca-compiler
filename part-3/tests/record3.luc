@@ -1,0 +1,4 @@
+PROGRAM P;
+TYPE x = RECORD [a : b; c : d];
+BEGIN
+END.

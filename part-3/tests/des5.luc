@@ -1,0 +1,4 @@
+PROGRAM P;
+BEGIN
+   READ a[b[c[d]]];
+END.

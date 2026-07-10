@@ -1,0 +1,10 @@
+PROGRAM P;
+BEGIN
+   WHILE x DO
+      REPEAT
+         IF y THEN
+            WRITELN;
+         ENDIF;
+      UNTIL z;
+   ENDDO;
+END.

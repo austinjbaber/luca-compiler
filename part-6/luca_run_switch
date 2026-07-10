@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+	echo "Usage: $0 <input>.vm" >&2
+	exit 1
+fi
+
+input="$1"
+
+# can be run from either assignment-6/ or austin_baber/
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+src="$script_dir/luca_run_switch.c"
+bin="$script_dir/luca_run_switch.exe"
+
+# rebuild runner when the source is newer or first time
+if [[ ! -x "$bin" || "$src" -nt "$bin" ]]; then
+	gcc -o "$bin" "$src"
+fi
+
+exec "$bin" "$input"

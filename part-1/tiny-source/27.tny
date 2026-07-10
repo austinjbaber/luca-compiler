@@ -1,0 +1,21 @@
+BEGIN
+i = 0;
+
+10:;
+sq = i * i;
+PRINT sq;
+
+i = i + 1;
+IF i < 6 GOTO 10;
+
+x = 5 - 5;
+IF x GOTO 200;
+PRINT 999;
+GOTO 300;
+
+200:;
+PRINT 12345;
+
+300:;
+END
+

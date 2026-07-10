@@ -1,0 +1,20 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <READ pos="3">
+         <VARREF ident="a" pos="3">
+            <FIELDREF ident="b" pos="3">
+               <INDEX pos="3">
+                  <VARREF ident="c" pos="3">
+                     <DESNULL pos="3"/>
+                  </VARREF>
+                  <DESNULL pos="3"/>
+               </INDEX>
+            </FIELDREF>
+         </VARREF>
+      </READ>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

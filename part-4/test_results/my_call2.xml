@@ -1,0 +1,19 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLNULL pos="2"/>
+   <STATS pos="3">
+      <PROCCALL pos="3">
+         <VARREF ident="x" pos="3">
+            <DESNULL pos="3"/>
+         </VARREF>
+         <ACTUAL pos="3">
+            <VARREF ident="y" pos="3">
+               <DESNULL pos="3"/>
+            </VARREF>
+            <ACTUALNULL pos="3"/>
+         </ACTUAL>
+      </PROCCALL>
+      <STATNULL pos="4"/>
+   </STATS>
+</PROGRAM>
+</block>

@@ -1,0 +1,7 @@
+PROGRAM C19;
+CONST C1 : INTEGER = 4;
+VAR X : INTEGER;
+BEGIN 
+   X := C1;
+END.
+

@@ -1,0 +1,12 @@
+BEGIN
+i = 0;
+1:;
+PRINT i;
+i = i + 1;
+IF i < 3 GOTO 1;
+PRINT 999;
+GOTO 2;
+PRINT 888;
+2:;
+PRINT 777;
+END

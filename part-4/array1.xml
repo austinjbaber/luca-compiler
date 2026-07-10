@@ -1,0 +1,13 @@
+<block>
+<PROGRAM name="P" pos="1">
+   <DECLS pos="2">
+      <ARRAYDECL ident="x" elementTypeName="T" pos="2">
+         <VARREF ident="a" pos="2">
+            <DESNULL pos="2"/>
+         </VARREF>
+      </ARRAYDECL>
+      <DECLNULL pos="3"/>
+   </DECLS>
+   <STATNULL pos="4"/>
+</PROGRAM>
+</block>

@@ -1,0 +1,24 @@
+BEGIN
+   x = 10;
+   y = 20;
+   S = 1;
+
+   IF 0 < x GOTO 22;
+   S = 0;
+   x = 0 - x;
+   22:;
+   
+   P = 0;
+   11:;
+   IF x < 0 GOTO 99;
+   P = P + y;
+   x = x - 1;
+   GOTO 11;
+
+   99:;
+   IF S GOTO 88;
+   P = 0 - P;
+
+   88:;
+   PRINT P;
+END
