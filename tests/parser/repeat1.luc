@@ -1,0 +1,6 @@
+PROGRAM P;
+BEGIN
+   REPEAT
+      x := y;
+   UNTIL z;
+END.

@@ -1,0 +1,14 @@
+# PROC_BEGIN at byte 0: one 8-byte formal and no locals.
+38 8 0
+4 0
+19
+44
+51
+39 8 0
+
+# Main begins at byte 46. CALL at byte 57 jumps back 57 bytes.
+1
+18 42
+42
+40 -57 8
+2

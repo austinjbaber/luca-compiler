@@ -15,7 +15,9 @@ The primary deliverable is an end-to-end `lucac` command:
 
 The MIPS translator is retained as an experimental backend because it consumes
 `.quad` input, not VM code, and the source-to-quad generator is not present in
-this repository.
+this repository. Its active implementation will be ported from Python to C so
+the finished project has an intentional Java compiler, C runtime/backend, and
+Bash tooling boundary.
 
 ## Source Of Truth
 
@@ -24,8 +26,8 @@ this repository.
 | Lexer, parser, AST | `part-5` | Keep; it subsumes the earlier Java stages. |
 | Semantic analysis and symbol table | `part-5` | Keep as the active front end. |
 | VM interpreter | `part-7` | Keep as the most complete switch-dispatch runtime. |
-| Indirect-dispatch interpreter | `part-6` | Retain as an optional runtime experiment. |
-| MIPS translator | `part-8` | Retain as an experimental backend. |
+| Indirect-dispatch interpreter | `part-6` | Retain as an experimental GNU C dispatch study, not a feature-equivalent runtime. |
+| MIPS translator | `part-8` | Port the `.quad` translator to C and retain it as an experimental backend. |
 | Tiny language prototype | `part-1` | Preserve only as a historical artifact. |
 | Earlier lexer/parser/AST milestones | `part-2` through `part-4` | Replace with focused regression fixtures and a migration note. |
 
@@ -63,13 +65,15 @@ luca-compiler/
   runtime/
     include/opcodes.h        # new: shared VM instruction definitions
     src/luca_vm_switch.c
-    src/luca_vm_indirect.c
+    experimental/
+      luca_vm_indirect.c
   backend/
-    mips/luca_mips.py
+    mips/luca_mips.c
   tests/
     lexer/
     parser/
     semantics/
+    runtime/
     e2e/
     fixtures/
   archive/
@@ -84,25 +88,27 @@ course-platform JSON metadata are not versioned.
 
 ## Migration Sequence
 
-1. Create repository hygiene.
-   Add the root README, license, `.gitignore`, build entry points, and CI. Start
-   a fresh Git history because the current workspace is not a Git repository.
+1. [x] Create repository hygiene.
+   Added the root README, license, `.gitignore`, portable build entry points,
+   and GitHub Actions CI. Removed course-platform JSON metadata and tracked
+   generated binaries/results.
 
-2. Consolidate the Java front end.
-   Move the part-5 Java packages under `compiler/src/main/java` without changing
-   behavior. Replace ad-hoc shell launchers with one CLI that exposes `lex`,
-   `parse`, and `check` subcommands.
+2. [x] Consolidate the Java front end.
+   Moved the part-5 Java packages under `compiler/src/main/java` without
+   changing behavior. Replaced the active ad-hoc launchers with one CLI that
+   exposes `lex`, `parse`, and `check` subcommands.
 
-3. Normalize the test suite.
-   Migrate the strongest lexer fixtures from part 2, parser/AST fixtures from
-   part 4, and semantic fixtures from part 5. Keep expected outputs only when
-   they assert behavior; remove duplicate `my_*` result captures.
+3. [x] Normalize the test suite.
+   Migrated 20 lexer fixtures from part 2, 58 parser/AST fixtures from part 4,
+   and 78 semantic fixtures from part 5. The Bash regression runner performs
+   comparisons in temporary storage; legacy `test_results` directories and
+   duplicate `my_*` captures were removed.
 
-4. Consolidate the VM runtime.
-   Start from part 7's switch interpreter, which adds real procedure-frame
-   handling beyond the part-6 version. Extract opcode constants into a shared
-   header and retain the part-6 indirect-dispatch runtime behind a separate
-   build target.
+4. [x] Consolidate the VM runtime.
+   Established part 7's switch interpreter as the supported runtime, extracted
+   all 57 serialized opcodes into a shared header, and added arithmetic and
+   procedure-frame regressions. Retained part 6's incomplete indirect-dispatch
+   implementation as a clearly labeled experiment.
 
 5. Build the missing code-generation bridge.
    Add a small, well-tested AST-to-VM emitter in `compiler/.../codegen`. Begin
@@ -116,9 +122,17 @@ course-platform JSON metadata are not versioned.
    rather than execute a checked-in `.vm` artifact.
 
 7. Position the MIPS translator honestly.
-   Keep it executable and documented as a `.quad` to MIPS prototype. Add a
-   source-to-quad emitter only after the VM pipeline is stable; do not advertise
-   MIPS compilation as an end-to-end feature before that bridge exists.
+   Port the Python prototype to C and document it as a `.quad` to MIPS
+   experiment. Add a source-to-quad emitter only after the VM pipeline is
+   stable; do not advertise MIPS compilation as an end-to-end feature before
+   that bridge exists.
+
+## Current Status
+
+Steps 1 through 4 are complete. A clean build
+compiles the Java front end and both C runtime implementations. The regression
+suite contains 156 front-end cases and three VM cases. The next task is step 5:
+the AST-to-VM code-generation bridge. GL me.
 
 ## Definition Of Done
 
@@ -131,13 +145,3 @@ course-platform JSON metadata are not versioned.
   features, limitations, and attribution to the University of Arizona course.
 - The repository contains no compiled binaries, generated reports, or private
   course-platform metadata.
-
-## Commit Plan
-
-1. `chore: initialize portfolio repository and developer tooling`
-2. `refactor: consolidate Java frontend from course milestones`
-3. `test: migrate lexer parser and semantic regression fixtures`
-4. `refactor: consolidate VM runtimes and opcode definitions`
-5. `feat: add VM code generator and lucac CLI`
-6. `test: add end-to-end compiler execution coverage`
-7. `docs: publish architecture language reference and project demo`

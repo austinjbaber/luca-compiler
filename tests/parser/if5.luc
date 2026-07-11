@@ -1,0 +1,12 @@
+PROGRAM P;
+BEGIN
+   IF x THEN
+      IF y THEN 
+        IF z THEN
+           WRITELN;
+        ELSE
+           EXIT; 
+        ENDIF;
+      ENDIF;
+   ENDIF;
+END.

@@ -1,6 +1,0 @@
-<block>
-   <TOKEN kind="STRINGLIT" line="1" value="foo"/>
-   <TOKEN kind="STRINGLIT" line="2" value=""/>
-   <TOKEN kind="CHARLIT" line="3" value="a"/>
-   <TOKEN kind="EOF" line="4"/>
-</block>

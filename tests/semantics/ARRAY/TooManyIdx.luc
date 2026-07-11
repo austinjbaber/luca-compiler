@@ -1,0 +1,7 @@
+PROGRAM T47;
+TYPE A = ARRAY 20 OF INTEGER;
+VAR B:A;
+BEGIN
+	B[3]:=1+(2+(3+(4 + B[4][5][6])));
+END.
+

@@ -1,0 +1,6 @@
+PROGRAM T13;
+VAR I:INTEGER;
+BEGIN
+I:='X';
+END.
+

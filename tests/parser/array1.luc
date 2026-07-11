@@ -1,0 +1,4 @@
+PROGRAM P;
+TYPE x = ARRAY a OF T;
+BEGIN
+END.

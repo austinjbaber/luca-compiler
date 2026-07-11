@@ -1,0 +1,16 @@
+"## Commit Plan
+
+1. `chore: initialize portfolio repository and developer tooling`
+2. `refactor: consolidate Java frontend from course milestones`
+3. `test: migrate lexer parser and semantic regression fixtures`
+4. `refactor: consolidate VM runtimes and opcode definitions`
+5. `feat: add VM code generator and lucac CLI`
+6. `test: add end-to-end compiler execution coverage`
+7. `docs: publish architecture language reference and project demo`
+
+1. `refactor: establish compiler frontend and VM runtime foundation`
+2. `feat: add VM code generator and lucac compile command`
+3. `refactor: move indirect VM behind experimental build target`
+4. `test: add end-to-end compiler execution coverage`
+5. `refactor: port experimental MIPS translator to C`
+6. `docs: publish architecture language reference and project demo`"

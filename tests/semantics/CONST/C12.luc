@@ -1,0 +1,5 @@
+PROGRAM C12;
+CONST C0 : BOOLEAN = '5' < '1';
+BEGIN 
+END.
+

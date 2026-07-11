@@ -1,0 +1,6 @@
+PROGRAM T498;
+TYPE R = RECORD [a:INTEGER];
+VAR x : R;
+BEGIN
+   x.b := 5;
+END.

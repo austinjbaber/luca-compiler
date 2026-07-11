@@ -1,5 +1,0 @@
-<block>
-   <TOKEN kind="COLON" line="1"/>
-   <TOKEN kind="COLONEQ" line="2"/>
-   <TOKEN kind="EOF" line="3"/>
-</block>

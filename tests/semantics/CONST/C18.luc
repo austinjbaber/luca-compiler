@@ -1,0 +1,7 @@
+PROGRAM C18;
+CONST C1 : INTEGER = 4;
+BEGIN 
+   C1 := 5;
+   READ C1;
+END.
+

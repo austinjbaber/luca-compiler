@@ -1,5 +1,0 @@
-<block>
-   <TOKEN kind="ERROR_UNTERMINATED_STRING" line="1"/>
-   <TOKEN kind="INTLIT" line="2" value="42"/>
-   <TOKEN kind="EOF" line="3"/>
-</block>

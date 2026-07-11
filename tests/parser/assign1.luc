@@ -1,0 +1,4 @@
+PROGRAM P;
+BEGIN
+   x := y;
+END.

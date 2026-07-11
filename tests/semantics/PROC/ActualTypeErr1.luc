@@ -1,0 +1,9 @@
+PROGRAM T34;
+PROCEDURE P(
+   I:INTEGER; 
+   C:CHAR);
+BEGIN
+END;
+BEGIN
+P('x',3);
+END.

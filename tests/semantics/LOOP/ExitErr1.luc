@@ -1,0 +1,7 @@
+PROGRAM T295;
+BEGIN
+   WHILE 5 < 10 DO
+     IF 1 < 3 THEN EXIT; ENDIF;
+   ENDDO;
+END.
+

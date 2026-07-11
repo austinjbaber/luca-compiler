@@ -1,0 +1,6 @@
+PROGRAM T18;
+VAR I:INTEGER;
+BEGIN
+I := - 'x';
+END.
+

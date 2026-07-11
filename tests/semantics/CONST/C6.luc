@@ -1,0 +1,5 @@
+PROGRAM C6;
+CONST C0 : INTEGER = 5 / (4 - (2 + 2));
+BEGIN 
+END.
+

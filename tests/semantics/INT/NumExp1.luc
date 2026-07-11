@@ -1,0 +1,6 @@
+PROGRAM T16;
+VAR C:CHAR;
+BEGIN
+C := 'X' * 'Y';
+END.
+

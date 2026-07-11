@@ -1,0 +1,13 @@
+PROGRAM T22;
+VAR X:INTEGER;
+TYPE T = RECORD [a:CHAR];
+VAR v : T;
+BEGIN
+	IF X # '3' THEN 
+		X:=2;
+	ENDIF;
+	IF v = v THEN 
+		X:=2;
+	ENDIF;
+END.
+

@@ -1,0 +1,15 @@
+PROGRAM P;
+   PROCEDURE x();
+      PROCEDURE y();
+         TYPE T = RECORD[];
+         VAR x : T;
+         CONST a : T = 15;
+      BEGIN
+         IF x THEN WRITELN; ELSE WRITE a; ENDIF;
+      END;
+   BEGIN
+      x();
+   END;
+BEGIN
+   x();
+END.

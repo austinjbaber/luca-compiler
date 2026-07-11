@@ -1,0 +1,7 @@
+PROGRAM T394;
+VAR x : REAL;
+VAR y : REAL;
+VAR z : REAL;
+BEGIN
+   x := y % z;
+END.

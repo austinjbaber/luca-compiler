@@ -1,0 +1,16 @@
+PROGRAM SCOPES2;
+VAR Z:INTEGER;
+VAR X:INTEGER;
+PROCEDURE P();
+	VAR Y:INTEGER;
+	VAR X:CHAR;
+	BEGIN
+	 	X:='c';
+		Y:=Z;
+	END;
+BEGIN
+	X:=4;
+	Z:=X;
+	P();
+END.
+

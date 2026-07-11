@@ -1,0 +1,6 @@
+PROGRAM P;
+   PROCEDURE x();
+   BEGIN
+   END;
+BEGIN
+END.

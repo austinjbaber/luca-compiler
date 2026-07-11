@@ -1,12 +1,19 @@
 .PHONY: build test clean
 
+ifeq ($(OS),Windows_NT)
+TEST_SHELL ?= C:/Program Files/Git/bin/bash.exe
+else
+TEST_SHELL ?= bash
+endif
+
 build:
 	$(MAKE) -C compiler build
+	$(MAKE) -C runtime build
 
 test: build
-	java -cp compiler/build/classes cli.Lucac lex part-2/tests/int.luc
-	java -cp compiler/build/classes cli.Lucac parse part-5/tests/INT/OK1.luc
-	java -cp compiler/build/classes cli.Lucac check part-5/tests/INT/OK1.luc
+	"$(TEST_SHELL)" tests/run_regressions.sh
+	"$(TEST_SHELL)" tests/run_vm_regressions.sh
 
 clean:
 	$(MAKE) -C compiler clean
+	$(MAKE) -C runtime clean
