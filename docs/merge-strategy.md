@@ -110,7 +110,7 @@ course-platform JSON metadata are not versioned.
    procedure-frame regressions. Retained part 6's incomplete indirect-dispatch
    implementation as a clearly labeled experiment.
 
-5. Build the missing code-generation bridge.
+5. [x] Build the missing code-generation bridge.
    Add a small, well-tested AST-to-VM emitter in `compiler/.../codegen`. Begin
    with integer expressions, variables, writes, and control flow; then add
    procedures, arrays, records, strings, and floating-point operations. This is
@@ -145,3 +145,10 @@ the AST-to-VM code-generation bridge. GL me.
   features, limitations, and attribution to the University of Arizona course.
 - The repository contains no compiled binaries, generated reports, or private
   course-platform metadata.
+
+## Remaining Plan
+
+1. `refactor: move indirect VM behind experimental build target`
+2. `test: add end-to-end compiler execution coverage`
+3. `refactor: port experimental MIPS translator to C`
+4. `docs: publish architecture language reference and project demo`

@@ -6,8 +6,16 @@ BUILD_DIR := build
 ifeq ($(OS),Windows_NT)
 CC := gcc
 EXE := .exe
+# Git Bash reports Windows_NT but sets MSYSTEM and executes POSIX commands.
+# Native Windows Make may report SHELL=sh.exe while still using CMD recipes,
+# so MSYSTEM is the reliable distinction here.
+ifneq ($(strip $(MSYSTEM)),)
+CREATE_BUILD_DIR = mkdir -p $(BUILD_DIR)
+REMOVE_BUILD_DIR = rm -rf $(BUILD_DIR)
+else
 CREATE_BUILD_DIR = if not exist "$(BUILD_DIR)" mkdir "$(BUILD_DIR)"
 REMOVE_BUILD_DIR = if exist "$(BUILD_DIR)" rmdir /s /q "$(BUILD_DIR)"
+endif
 else
 CC ?= cc
 EXE :=

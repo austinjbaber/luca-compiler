@@ -1,0 +1,33 @@
+PROGRAM IntegerControl;
+VAR X : INTEGER;
+VAR Flag : BOOLEAN;
+BEGIN
+   X := 2 + 3 * 4;
+   WRITE X; WRITELN;
+
+   Flag := (X = 14) AND NOT FALSE;
+   IF Flag THEN
+      WRITE 1;
+   ELSE
+      WRITE 0;
+   ENDIF;
+   WRITELN;
+
+   WHILE X > 10 DO
+      X := X - 2;
+   ENDDO;
+   WRITE X; WRITELN;
+
+   REPEAT
+      X := X + 1;
+   UNTIL X = 11;
+   WRITE X; WRITELN;
+
+   LOOP
+      X := X + 1;
+      IF X = 13 THEN
+         EXIT;
+      ENDIF;
+   ENDLOOP;
+   WRITE X; WRITELN;
+END.

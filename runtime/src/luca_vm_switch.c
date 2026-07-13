@@ -176,12 +176,14 @@ void read(char* path, char prog[]) {
       if (READ_DEBUG) printf("OPEN %s\n", path);
    }
    char buf[1000];
+   char raw[1000];
    char* pc = prog;
    char *dest[10];
    while(1) {
       char* r = fgets(buf, 1000, fptr);
       //if (READ_DEBUG) printf("READ %s\n", buf);
       if (r == NULL) return;
+      strcpy(raw, buf);
       int i=0;
         char* token = strtok(buf, " \t\r\n"); // needed for windows line endings
         while (token != NULL && i < 10) {
@@ -217,10 +219,16 @@ void read(char* path, char prog[]) {
        } else if (op == DEF_STRING) {
          int idx;
          sscanf(dest[1], "%d", &idx);
-             int len = (int)strlen(dest[2]) - 2;
-             char* string = malloc(len + 1); // malloc(len) doesn't leave space for /0
-             strncpy(string, dest[2]+1, len);
-             string[len] = 0;
+         char* firstQuote = strchr(raw, '"');
+         char* lastQuote = strrchr(raw, '"');
+         if (firstQuote == NULL || lastQuote == firstQuote) {
+            printf("Malformed string definition\n");
+            exit(-1);
+         }
+         int len = (int)(lastQuote - firstQuote - 1);
+         char* string = malloc((size_t)len + 1); // leave space for /0
+         strncpy(string, firstQuote + 1, (size_t)len);
+         string[len] = 0;
          strings[idx] = string;
          if (READ_DEBUG) printf("READ DEF_STRING: %i \"%s\"\n", idx, string);
        } else if (op == DEF_GLOBALS) {

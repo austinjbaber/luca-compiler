@@ -1,4 +1,4 @@
-# Front-end regression tests
+# Regression tests
 
 The consolidated regression suite is grouped by compiler stage:
 
@@ -8,13 +8,15 @@ The consolidated regression suite is grouped by compiler stage:
   part 5.
 - `runtime/` contains shared VM instruction regressions plus a switch-runtime
   procedure-frame regression.
+- `codegen/` contains focused source/output pairs for AST-to-VM lowering.
 
 Run every group with `make test`, or run a single group after `make build`:
 
 ```sh
-bash tests/run_regressions.sh lexer
-bash tests/run_regressions.sh parser
-bash tests/run_regressions.sh semantics
+bash tests/run_frontend_regressions.sh lexer
+bash tests/run_frontend_regressions.sh parser
+bash tests/run_frontend_regressions.sh semantics
+bash tests/run_codegen_regressions.sh
 ```
 
 Expected files are hand-maintained assertions. The runner captures compiler

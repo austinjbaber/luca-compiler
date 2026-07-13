@@ -1,0 +1,14 @@
+PROGRAM StringsReals;
+VAR R : REAL;
+VAR C : CHAR;
+BEGIN
+   R := 1.5 + FLOAT 2 * 2.0;
+   WRITE "value with spaces: "; WRITE R; WRITELN;
+   C := '!';
+   WRITE C; WRITELN;
+   WRITE TRUNC R; WRITELN;
+   IF R >= 5.5 THEN
+      WRITE "ok";
+   ENDIF;
+   WRITELN;
+END.

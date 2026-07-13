@@ -23,7 +23,8 @@ problem[0-9]*.json
 
 # Editors and operating systems
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 *.swp
 .DS_Store
 Thumbs.db

@@ -11,8 +11,9 @@ build:
 	$(MAKE) -C runtime build
 
 test: build
-	"$(TEST_SHELL)" tests/run_regressions.sh
+	"$(TEST_SHELL)" tests/run_frontend_regressions.sh
 	"$(TEST_SHELL)" tests/run_vm_regressions.sh
+	"$(TEST_SHELL)" tests/run_codegen_regressions.sh
 
 clean:
 	$(MAKE) -C compiler clean

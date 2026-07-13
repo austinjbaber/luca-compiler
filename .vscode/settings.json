@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "compiler/src/main/java"
+    ],
+    "java.project.outputPath": "compiler/build/vscode-classes"
+}

@@ -1,0 +1,27 @@
+PROGRAM ProceduresAggregates;
+TYPE Vector = ARRAY 4 OF INTEGER;
+TYPE Pair = RECORD [Left : INTEGER; Right : INTEGER];
+
+PROCEDURE Fill(VAR Data : Vector; VAR Ends : Pair; Base : INTEGER);
+BEGIN
+   Data[0] := Base;
+   Data[1] := Base + 1;
+   Data[2] := Base + 2;
+   Data[3] := Base + 3;
+   Ends.Left := Base + 4;
+   Ends.Right := Base + 5;
+END;
+
+PROCEDURE Total(VAR Data : Vector; VAR Ends : Pair; VAR Result : INTEGER);
+BEGIN
+   Result := Data[0] + Data[1] + Data[2] + Data[3] + Ends.Left + Ends.Right;
+END;
+
+VAR Values : Vector;
+VAR Bounds : Pair;
+VAR Sum : INTEGER;
+BEGIN
+   Fill(Values, Bounds, 1);
+   Total(Values, Bounds, Sum);
+   WRITE Sum; WRITELN;
+END.

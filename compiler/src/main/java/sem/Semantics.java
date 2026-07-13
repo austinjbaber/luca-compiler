@@ -126,16 +126,23 @@ public Semantics(String traceFileName) {
 
 
 public static void SemanticAnalysis(ast.AST E) {
+    SemanticAnalysisWithCount(E);
+}
+
+/** Analyze an AST, emit the usual diagnostics, and return their count. */
+public static int SemanticAnalysisWithCount(ast.AST E) {
     if (E instanceof ast.PROGRAM) {
        // entry point of semantic analysis
        ArrayList<SemError> errors = new ArrayList<SemError>();
        PROGRAM((ast.PROGRAM) E, errors);
        emitSortedErrors(errors);
        closeTraceFile();
+       return errors.size();
     } else {
        closeTraceFile();
-      auxx.Error.Internal("SemanticAnalysis", "Node " + E.getClass().getName() + " unexpected.");
-    };
+       auxx.Error.Internal("SemanticAnalysis", "Node " + E.getClass().getName() + " unexpected.");
+       return 1;
+    }
 }
 
 private static void emitSortedErrors(ArrayList<SemError> errors) {

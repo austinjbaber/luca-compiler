@@ -2,8 +2,8 @@
 
 Luca Compiler is a consolidation of eight incremental compiler-course
 assignments into a maintainable compiler and virtual-machine project. The
-active Java front end currently provides lexical analysis, parsing, AST
-construction, and semantic analysis for the Luca language.
+active Java compiler provides lexical analysis, parsing, AST construction,
+semantic analysis, and code generation for the Luca stack VM.
 
 The intended end-to-end pipeline is:
 
@@ -11,17 +11,17 @@ The intended end-to-end pipeline is:
 .luc source -> lexer -> parser -> AST -> semantic analysis -> VM code -> VM runtime
 ```
 
-VM code generation is not implemented yet. The consolidated VM runtimes and
-the experimental `.quad`-to-MIPS translator are currently separate from the
-Java front end; the missing code-generation bridge is the next major stage.
+The supported code generator covers scalar expressions, variables, I/O,
+control flow, procedures, arrays, records, strings, and floating-point
+operations. The experimental `.quad`-to-MIPS translator remains separate from
+the source-to-VM pipeline.
 
 ## Implementation languages
 
 The project uses each language at a deliberate architectural boundary:
 
 - Java implements compiler analysis and transformation passes: lexing,
-  parsing, AST construction, semantic analysis, and eventually VM code
-  generation.
+  parsing, AST construction, semantic analysis, and VM code generation.
 - C implements the low-level VM runtime, including its operand stack, memory
   representation, procedure frames, and instruction dispatch.
 - Bash provides thin build, launcher, and regression-test orchestration.
@@ -43,15 +43,18 @@ make build
 bin/lucac lex tests/lexer/int.luc
 bin/lucac parse tests/parser/prog1.luc
 bin/lucac check tests/semantics/INT/OK1.luc
+bin/lucac compile part-7/myprog.luc myprog.vm
+runtime/build/luca_vm_switch myprog.vm
 make test
 ```
 
+`compile` writes VM text to standard output when its output argument is omitted.
 `check` produces no output for a semantically valid program and writes
 diagnostics to standard error for an invalid program.
 
-The regression suite is organized by compiler stage under `tests/`. Run one
-stage directly with `bash tests/run_regressions.sh lexer`, `parser`, or
-`semantics`.
+The regression suite is organized by compiler stage under `tests/`. The
+code-generation suite compiles focused language fixtures and executes them on
+the supported switch VM.
 
 ## Repository status
 

@@ -21,6 +21,7 @@ public class Arch {
     static java.util.Hashtable TypeSize = new java.util.Hashtable();
     static {
        TypeSize.put("gvm",      new TYPES(1,1,1,1,1,1,1,1));
+       TypeSize.put("luca-vm",  new TYPES(8,8,8,8,8,8,8,8));
        TypeSize.put("alpha",    new TYPES(4,8,4,8,1,1,8,8));
        TypeSize.put("simple-sparc-v9", new TYPES(8,8,8,8,8,8,8,8));
        TypeSize.put("sparc-v9", new TYPES(8,8,8,8,1,8,8,8));
