@@ -1,0 +1,53 @@
+PROGRAM ArrayStatistics;
+
+TYPE NumberArray = ARRAY 8 OF INTEGER;
+
+PROCEDURE Calculate(VAR Numbers : NumberArray;
+                    VAR Minimum : INTEGER;
+                    VAR Maximum : INTEGER;
+                    VAR Total : INTEGER;
+                    VAR Average : REAL);
+VAR Index : INTEGER;
+BEGIN
+   Minimum := Numbers[0];
+   Maximum := Numbers[0];
+   Total := 0;
+   Index := 0;
+
+   WHILE Index < 8 DO
+      IF Numbers[Index] < Minimum THEN
+         Minimum := Numbers[Index];
+      ENDIF;
+      IF Numbers[Index] > Maximum THEN
+         Maximum := Numbers[Index];
+      ENDIF;
+      Total := Total + Numbers[Index];
+      Index := Index + 1;
+   ENDDO;
+
+   Average := FLOAT Total / 8.0;
+END;
+
+VAR Numbers : NumberArray;
+VAR Minimum : INTEGER;
+VAR Maximum : INTEGER;
+VAR Total : INTEGER;
+VAR Average : REAL;
+BEGIN
+   Numbers[0] := 12;
+   Numbers[1] := -4;
+   Numbers[2] := 7;
+   Numbers[3] := 19;
+   Numbers[4] := 3;
+   Numbers[5] := 8;
+   Numbers[6] := -1;
+   Numbers[7] := 6;
+
+   Calculate(Numbers, Minimum, Maximum, Total, Average);
+
+   WRITE "Count: "; WRITE 8; WRITELN;
+   WRITE "Minimum: "; WRITE Minimum; WRITELN;
+   WRITE "Maximum: "; WRITE Maximum; WRITELN;
+   WRITE "Sum: "; WRITE Total; WRITELN;
+   WRITE "Average: "; WRITE Average; WRITELN;
+END.

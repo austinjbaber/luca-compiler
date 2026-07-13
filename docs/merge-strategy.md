@@ -116,7 +116,7 @@ course-platform JSON metadata are not versioned.
    procedures, arrays, records, strings, and floating-point operations. This is
    the work that converts the collection into a real end-to-end compiler.
 
-6. Add end-to-end demonstrations.
+6. [x] Add end-to-end demonstrations.
    Each `tests/e2e` fixture contains a `.luc` program and expected stdout. The
    README's quick-start command must compile and run an example from source,
    rather than execute a checked-in `.vm` artifact.
@@ -129,10 +129,11 @@ course-platform JSON metadata are not versioned.
 
 ## Current Status
 
-Steps 1 through 4 are complete. A clean build
-compiles the Java front end and both C runtime implementations. The regression
-suite contains 156 front-end cases and three VM cases. The next task is step 5:
-the AST-to-VM code-generation bridge. GL me.
+Steps 1 through 6 are complete. A clean build compiles the Java front end and
+both C runtime implementations. The regression suite contains 156 front-end
+cases, three VM cases, three focused code-generation cases, and four end-to-end
+programs. The next task is step 7: positioning the experimental MIPS
+translator honestly.
 
 ## Definition Of Done
 
@@ -149,6 +150,5 @@ the AST-to-VM code-generation bridge. GL me.
 ## Remaining Plan
 
 1. `refactor: move indirect VM behind experimental build target`
-2. `test: add end-to-end compiler execution coverage`
-3. `refactor: port experimental MIPS translator to C`
-4. `docs: publish architecture language reference and project demo`
+2. `refactor: port experimental MIPS translator to C`
+3. `docs: publish architecture language reference and project demo`

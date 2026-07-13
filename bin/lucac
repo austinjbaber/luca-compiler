@@ -8,4 +8,30 @@ if [ ! -d "$CLASSES" ]; then
     make -C "$ROOT/compiler" build
 fi
 
+if [ "${1:-}" = "run" ]; then
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: lucac run <input.luc>" >&2
+        exit 2
+    fi
+
+    RUNTIME="$ROOT/runtime/build/luca_vm_switch"
+    if [ -f "$RUNTIME.exe" ]; then
+        RUNTIME="$RUNTIME.exe"
+    fi
+    if [ ! -f "$RUNTIME" ]; then
+        make -C "$ROOT/runtime" switch
+        RUNTIME="$ROOT/runtime/build/luca_vm_switch"
+        if [ -f "$RUNTIME.exe" ]; then
+            RUNTIME="$RUNTIME.exe"
+        fi
+    fi
+
+    TMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t lucac-run)
+    trap 'rm -rf "$TMP_DIR"' 0 HUP INT TERM
+    PROGRAM="$TMP_DIR/program.vm"
+    java -cp "$CLASSES" cli.Lucac compile "$2" "$PROGRAM"
+    "$RUNTIME" "$PROGRAM"
+    exit $?
+fi
+
 exec java -cp "$CLASSES" cli.Lucac "$@"

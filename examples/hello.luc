@@ -1,0 +1,4 @@
+PROGRAM Hello;
+BEGIN
+   WRITE "Hello, Luca!"; WRITELN;
+END.

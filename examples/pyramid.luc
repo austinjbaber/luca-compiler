@@ -1,0 +1,24 @@
+PROGRAM Pyramid;
+VAR Height : INTEGER;
+VAR Row : INTEGER;
+VAR Column : INTEGER;
+BEGIN
+   Height := 5;
+   Row := 1;
+   WHILE Row <= Height DO
+      Column := 1;
+      WHILE Column <= (Height - Row) DO
+         WRITE " ";
+         Column := Column + 1;
+      ENDDO;
+
+      Column := 1;
+      WHILE Column <= Row DO
+         IF Column > 1 THEN WRITE " "; ENDIF;
+         WRITE "*";
+         Column := Column + 1;
+      ENDDO;
+      WRITELN;
+      Row := Row + 1;
+   ENDDO;
+END.

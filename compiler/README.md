@@ -9,16 +9,19 @@ Build it from a POSIX shell with:
 make -C compiler build
 ```
 
-The `bin/lucac` entry point exposes the front-end stages and VM compilation:
+The `bin/lucac` entry point exposes the front-end stages, VM compilation, and
+end-to-end execution:
 
 ```sh
 bin/lucac lex source.luc
 bin/lucac parse source.luc
 bin/lucac check source.luc
 bin/lucac compile source.luc output.vm
+sh bin/lucac run source.luc
 ```
 
 `lex` and `parse` write their XML-like representations to standard output.
 `check` is silent for a valid program and writes semantic diagnostics to
 standard error. If `compile` is given no output path, it writes VM text to
-standard output.
+standard output. `run` compiles to a temporary VM program and executes it with
+the supported switch runtime.

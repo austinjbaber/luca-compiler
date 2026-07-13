@@ -1,0 +1,81 @@
+PROGRAM MergeSort;
+
+TYPE Vector = ARRAY 8 OF INTEGER;
+
+PROCEDURE Merge(VAR Data : Vector; VAR Work : Vector;
+                Left : INTEGER; Middle : INTEGER; Right : INTEGER);
+VAR I : INTEGER;
+VAR J : INTEGER;
+VAR K : INTEGER;
+BEGIN
+   I := Left;
+   J := Middle + 1;
+   K := Left;
+   WHILE I <= Middle DO
+      IF J <= Right THEN
+         IF Data[I] <= Data[J] THEN
+            Work[K] := Data[I];
+            I := I + 1;
+         ELSE
+            Work[K] := Data[J];
+            J := J + 1;
+         ENDIF;
+      ELSE
+         Work[K] := Data[I];
+         I := I + 1;
+      ENDIF;
+      K := K + 1;
+   ENDDO;
+   WHILE J <= Right DO
+      Work[K] := Data[J];
+      J := J + 1;
+      K := K + 1;
+   ENDDO;
+   K := Left;
+   WHILE K <= Right DO
+      Data[K] := Work[K];
+      K := K + 1;
+   ENDDO;
+END;
+
+PROCEDURE Sort(VAR Data : Vector; VAR Work : Vector;
+               Left : INTEGER; Right : INTEGER);
+VAR Middle : INTEGER;
+BEGIN
+   IF Left < Right THEN
+      Middle := (Left + Right) / 2;
+      Sort(Data, Work, Left, Middle);
+      Sort(Data, Work, Middle + 1, Right);
+      Merge(Data, Work, Left, Middle, Right);
+   ENDIF;
+END;
+
+PROCEDURE Show(VAR Data : Vector);
+VAR I : INTEGER;
+BEGIN
+   I := 0;
+   WHILE I < 8 DO
+      WRITE Data[I];
+      IF I < 7 THEN WRITE " "; ENDIF;
+      I := I + 1;
+   ENDDO;
+   WRITELN;
+END;
+
+VAR Values : Vector;
+VAR Work : Vector;
+BEGIN
+   Values[0] := 7;
+   Values[1] := 2;
+   Values[2] := 6;
+   Values[3] := 3;
+   Values[4] := 8;
+   Values[5] := 1;
+   Values[6] := 5;
+   Values[7] := 4;
+   WRITE "Before:"; WRITELN;
+   Show(Values);
+   Sort(Values, Work, 0, 7);
+   WRITE "After:"; WRITELN;
+   Show(Values);
+END.

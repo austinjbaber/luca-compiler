@@ -36,25 +36,44 @@ programming experience in the component that executes generated code.
 - GNU Make
 - Bash (Git for Windows provides it on Windows)
 
-## Build and use
+## Quick start
+
+Build the compiler and runtime, then compile and execute merge sort directly
+from Luca source:
 
 ```sh
 make build
+sh bin/lucac run examples/mergesort.luc
+```
+
+The example prints:
+
+```text
+Before:
+7 2 6 3 8 1 5 4
+After:
+1 2 3 4 5 6 7 8
+```
+
+The individual compiler stages are also available:
+
+```sh
 bin/lucac lex tests/lexer/int.luc
 bin/lucac parse tests/parser/prog1.luc
 bin/lucac check tests/semantics/INT/OK1.luc
-bin/lucac compile part-7/myprog.luc myprog.vm
-runtime/build/luca_vm_switch myprog.vm
+bin/lucac compile examples/hello.luc hello.vm
 make test
 ```
 
 `compile` writes VM text to standard output when its output argument is omitted.
 `check` produces no output for a semantically valid program and writes
-diagnostics to standard error for an invalid program.
+diagnostics to standard error for an invalid program. `run` uses a temporary
+VM file and removes it after execution.
 
 The regression suite is organized by compiler stage under `tests/`. The
 code-generation suite compiles focused language fixtures and executes them on
-the supported switch VM.
+the supported switch VM. The end-to-end suite exercises the public `lucac run`
+command with complete programs and expected stdout.
 
 ## Repository status
 
