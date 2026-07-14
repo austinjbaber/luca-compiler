@@ -15,13 +15,6 @@ test_results/
 **/test_results/
 *.dot
 
-# Course and local metadata
-collaboration.json
-survey.json
-problem[0-9]*.json
-.agents/
-.codex/
-
 # Editors and operating systems
 .idea/
 .vscode/*
