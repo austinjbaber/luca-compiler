@@ -1,0 +1,47 @@
+TypeDecl id=1 size=4 symbol=INT
+TypeDecl id=2 size=1 symbol=CHAR
+ArrayDecl id=3 size=16 elementTypeId=1 elementCount=4
+RecordDecl id=4 size=40008
+FieldDecl id=5 recordId=4 offset=4
+FieldDecl id=6 recordId=4 offset=40000
+VarDecl id=1 symbol=one kind=LOCAL typeId=1
+VarDecl id=2 symbol=two kind=LOCAL typeId=1
+VarDecl id=3 symbol=result kind=LOCAL typeId=1
+VarDecl id=4 symbol=address kind=LOCAL typeId=1
+VarDecl id=5 symbol=loaded kind=LOCAL typeId=1
+VarDecl id=6 symbol=byte kind=LOCAL typeId=2
+VarDecl id=7 symbol=array kind=LOCAL typeId=3
+VarDecl id=8 symbol=record kind=LOCAL typeId=4
+VarDecl id=9 symbol=indexAddress kind=LOCAL typeId=1
+VarDecl id=10 symbol=fieldAddress kind=LOCAL typeId=1
+VarDecl id=11 symbol=farFieldAddress kind=LOCAL typeId=1
+ProcBegin symbol=$MAIN
+LoadLit resultId=1 value=1
+LoadLit resultId=2 value=2
+BinExpr leftId=1 rightId=2 resultId=3 op=+
+UnaryExpr exprId=3 resultId=3 op=-
+UnaryExpr exprId=1 resultId=3 op=not
+AddressOf id=6 resultId=4
+Store leftId=4 rightId=1 typeId=2
+Load desId=4 resultId=5 typeId=2
+BinExpr leftId=5 rightId=2 resultId=3 op=*
+BinExpr leftId=5 rightId=2 resultId=3 op=/
+BinExpr leftId=5 rightId=2 resultId=3 op=%
+AddressOf id=7 resultId=4
+IndexOf baseId=4 indexId=5 resultId=9 arrayId=3
+AddressOf id=8 resultId=4
+FieldOf baseId=4 resultId=10 fieldId=5
+FieldOf baseId=4 resultId=11 fieldId=6
+Branch leftId=1 rightId=2 op== label=10
+Branch leftId=1 rightId=2 op=# label=10
+Branch leftId=1 rightId=2 op=< label=10
+Branch leftId=1 rightId=2 op=> label=10
+Branch leftId=1 rightId=2 op=<= label=10
+Branch leftId=1 rightId=2 op=>= label=10
+Goto label=20
+Label label=10
+Goto label=20
+Label label=20
+Write exprId=3
+WriteLn
+ProcEnd

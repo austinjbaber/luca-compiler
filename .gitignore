@@ -2,6 +2,7 @@
 *.class
 compiler/build/
 runtime/build/
+backend/mips/build/
 
 # Native build output
 *.exe

@@ -11,6 +11,8 @@ The consolidated regression suite is grouped by compiler stage:
 - `codegen/` contains focused source/output pairs for AST-to-VM lowering.
 - `e2e/` contains complete source programs and their expected stdout, exercised
   through the public `lucac run` command.
+- `backend/` contains `.quad`-to-MIPS golden outputs for the standalone
+  experimental translator, including its optional optimization pass.
 
 Run every group with `make test`, or run a single group after `make build`:
 
@@ -20,6 +22,7 @@ bash tests/run_frontend_regressions.sh parser
 bash tests/run_frontend_regressions.sh semantics
 bash tests/run_codegen_regressions.sh
 bash tests/run_e2e_regressions.sh
+bash tests/run_mips_regressions.sh
 ```
 
 Expected files are hand-maintained assertions. The runner captures compiler

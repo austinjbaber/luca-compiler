@@ -23,7 +23,8 @@ The project uses each language at a deliberate architectural boundary:
 - Java implements compiler analysis and transformation passes: lexing,
   parsing, AST construction, semantic analysis, and VM code generation.
 - C implements the low-level VM runtime, including its operand stack, memory
-  representation, procedure frames, and instruction dispatch.
+  representation, procedure frames, and instruction dispatch. It also
+  implements the standalone experimental `.quad`-to-MIPS translator.
 - Bash provides thin build, launcher, and regression-test orchestration.
 
 This keeps the compiler convenient to extend while preserving direct systems
@@ -73,7 +74,25 @@ VM file and removes it after execution.
 The regression suite is organized by compiler stage under `tests/`. The
 code-generation suite compiles focused language fixtures and executes them on
 the supported switch VM. The end-to-end suite exercises the public `lucac run`
-command with complete programs and expected stdout.
+command with complete programs and expected stdout. Two backend golden tests
+verify normal and optimized `.quad` translation without requiring Python or a
+MIPS simulator.
+
+## Experimental MIPS translator
+
+The C translator under `backend/mips/` accepts historical `.quad` files and
+emits assembly for educational MIPS simulators:
+
+```sh
+make mips
+backend/mips/build/luca_mips input.quad output.s -O
+```
+
+This is not a `lucac` backend. The repository has no Luca-source-to-quad
+emitter, so `.luc` programs cannot reach the MIPS translator; supported source
+compilation targets the Luca VM only. See the
+[`backend/mips` documentation](backend/mips/README.md) for its supported quad
+operations and limitations.
 
 ## Repository status
 
